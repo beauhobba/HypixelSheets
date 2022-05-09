@@ -23,7 +23,7 @@ function returnLapis() {
   console.log("UIID: "+uiid);
 
   
-
+  // ========================================
   // Access the Hypixel Skyblock API 
   var url = 'https://api.hypixel.net/skyblock/profiles?key='+key+'&uuid='+uiid
   var response = UrlFetchApp.fetch(url);
@@ -33,7 +33,6 @@ function returnLapis() {
     console.log("API CALLED FAILED")
     return; 
   }
-
 
   var response_parsed = JSON.parse(response.getContentText()); 
   // // Read the collection data 
@@ -45,11 +44,13 @@ function returnLapis() {
   }
   console.log("LAPIS DATA: "+lapis_collection);
 
-  // // Access our spreadsheet and set the value
+  
+  // =======================================================
+  // Access our spreadsheet and set the value
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var sheet = ss.getSheetByName('Collections');
 
   var lapis_var = sheet.getRange('B1').setValue(lapis_collection)
 
-  // // Set a trigger on the spreadsheet 
+  // Set a trigger on the spreadsheet 
 }
