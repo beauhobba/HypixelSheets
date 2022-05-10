@@ -19,13 +19,13 @@ function returnLapis() {
   var response_parsed = JSON.parse(response.getContentText()); 
 
   // Finally get out UIID 
-  var uiid = response_parsed.id;
-  console.log("UIID: "+uiid);
+  var uuid = response_parsed.id;
+  console.log("UIID: "+uuid);
 
   
 
   // Access the Hypixel Skyblock API 
-  var url = 'https://api.hypixel.net/skyblock/profiles?key='+key+'&uuid='+uiid
+  var url = 'https://api.hypixel.net/skyblock/profiles?key='+key+'&uuid='+uuid
   var response = UrlFetchApp.fetch(url);
 
   // Error check the response 
