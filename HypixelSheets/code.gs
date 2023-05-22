@@ -20,7 +20,7 @@ function returnLapis() {
 
   // Finally get out UIID 
   var uuid = response_parsed.id;
-  console.log("UIID: "+uuid);
+  console.log("UUID: "+uuid);
 
   
   // ========================================
@@ -37,7 +37,7 @@ function returnLapis() {
   var response_parsed = JSON.parse(response.getContentText()); 
   // // Read the collection data 
   try{
-    var lapis_collection = response_parsed.profiles[1].members[uiid].collection['INK_SACK:4'];
+    var lapis_collection = response_parsed.profiles[1].members[uuid].collection['INK_SACK:4'];
   }catch{
     console.log("error collecting Ink Sack")
     return; 
